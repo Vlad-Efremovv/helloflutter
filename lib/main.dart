@@ -9,18 +9,20 @@ class MyfirstApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.indigo,
         appBar: AppBar(
-          title: Text("Жучарник"),
+          title: Text("My first app"),
           centerTitle: true,
         ),
         body: Center(
           child: Container(
+            padding: EdgeInsets.all(16),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 LinearProgressIndicator(
                   value: 23,
                 ),
                 Text(
-                  "23 %",
+                  "23%",
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
                 Text(
@@ -30,6 +32,10 @@ class MyfirstApp extends StatelessWidget {
               ],
             ),
           ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: null,
+          child: Icon(Icons.cloud_download),
         ),
       ),
     );
