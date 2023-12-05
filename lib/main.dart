@@ -32,37 +32,47 @@ class _MyFirstAppState extends State<MyfirstApp> {
           centerTitle: true,
         ),
         body: Center(
-          child: Container(
-            padding: EdgeInsets.all(16),
-            child: _loading
-                ? Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      LinearProgressIndicator(
-                        value: _progressvalue,
-                      ),
-                      Text(
-                        "${(_progressvalue * 100).round()}%",
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                      ),
-                    ],
-                  )
-                : Text(
-                    "Press button to download",
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  ),
+          child: Stack(
+            fit: StackFit.expand,
+            children: <Widget>[
+              Image(
+                image: AssetImage('P:\Flutter\helloflutter\assets\images\gdsbdf97ihq31.png'),
+              ),
+              Image.asset('assets\icon\flickr_logo_icon_259363.ico'),
+            ],
           ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            setState(() {
-              _loading = !_loading;
-              _updateProgress();
-            });
-          },
-          child: Icon(Icons.cloud_download),
+
+          // child: Container(
+          //   padding: EdgeInsets.all(16),
+          //   child: _loading
+          //       ? Column(
+          //           mainAxisAlignment: MainAxisAlignment.center,
+          //           children: <Widget>[
+          //             LinearProgressIndicator(
+          //               value: _progressvalue,
+          //             ),
+          //             Text(
+          //               "${(_progressvalue * 100).round()}%",
+          //               style: TextStyle(color: Colors.white, fontSize: 20),
+          //             ),
+          //           ],
+          //         )
+          //       : Text(
+          //           "Press button to download",
+          //           style: TextStyle(color: Colors.white, fontSize: 20),
+          //         ),
         ),
       ),
+      //     floatingActionButton: FloatingActionButton(
+      //       onPressed: () {
+      //         setState(() {
+      //           _loading = !_loading;
+      //           _updateProgress();
+      //         });
+      //       },
+      //       child: Icon(Icons.cloud_download),
+      //     ),
+      //   ),
     );
   }
 
