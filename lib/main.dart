@@ -39,7 +39,7 @@ class _MyFirstAppState extends State<MyfirstApp> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       LinearProgressIndicator(
-                        value: 23,
+                        value: _progressvalue,
                       ),
                       Text(
                         "${(_progressvalue * 100).round()}%",
@@ -70,8 +70,8 @@ class _MyFirstAppState extends State<MyfirstApp> {
     const onewSec = const Duration(seconds: 1);
     Timer.periodic(onewSec, (Timer t) {
       setState(() {
-        _progressvalue += 0.2;
-        if (_progressvalue.toStringAsFixed(1) == '1.0') {
+        _progressvalue += 0.17;
+        if (_progressvalue >= 1.0) {
           _loading = false;
           t.cancel();
           _progressvalue = 0.0;
